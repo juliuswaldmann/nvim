@@ -43,4 +43,10 @@ return require('packer').startup(function(use)
 		  {'L3MON4D3/LuaSnip'},
 	  }
   }
+  --use('nvim-tree/nvim-tree.lua')
+  --use('nvim-tree/nvim-web-devicons')
+  use {
+    "nvim-telescope/telescope-file-browser.nvim",
+    requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
+  }
 end)

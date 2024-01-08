@@ -140,6 +140,11 @@ _G.packer_plugins = {
     path = "/home/juliuswaldmann/.local/share/nvim/site/pack/packer/start/rose-pine",
     url = "https://github.com/rose-pine/neovim"
   },
+  ["telescope-file-browser.nvim"] = {
+    loaded = true,
+    path = "/home/juliuswaldmann/.local/share/nvim/site/pack/packer/start/telescope-file-browser.nvim",
+    url = "https://github.com/nvim-telescope/telescope-file-browser.nvim"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/juliuswaldmann/.local/share/nvim/site/pack/packer/start/telescope.nvim",
