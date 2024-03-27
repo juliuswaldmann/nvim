@@ -48,3 +48,5 @@ cmp.setup({
 })
 
 lsp_zero.setup()
+
+vim.filetype.add({ extension = { templ = "templ" } })
