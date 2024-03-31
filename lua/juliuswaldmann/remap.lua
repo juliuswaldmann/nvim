@@ -55,3 +55,9 @@ vim.api.nvim_set_keymap(
   ":Telescope file_browser path=%:p:h select_buffer=true<CR>",
   { noremap = true }
 )
+
+--panels
+vim.keymap.set('n', '<C-J>', '<C-W><C-J>', {desc = 'Move to window below'})
+vim.keymap.set('n', '<C-K>', '<C-W><C-K>', {desc = 'Move to window above'})
+vim.keymap.set('n', '<C-L>', '<C-W><C-L>', {desc = 'Move to window to the right'})
+vim.keymap.set('n', '<C-H>', '<C-W><C-H>', {desc = 'Move to window to the left'})
