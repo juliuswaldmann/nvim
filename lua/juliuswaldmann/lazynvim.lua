@@ -1,22 +1,19 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
+    vim.fn.system({
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable", -- latest stable release
+        lazypath,
+    })
 end
 vim.opt.rtp:prepend(lazypath)
 
 local lazy = require('lazy')
 
 return lazy.setup({
-    -- Packer can manage itself
-    'wbthomason/packer.nvim',
-
     -- Telescope with dependencies
     'nvim-lua/plenary.nvim',
     'nvim-telescope/telescope.nvim',
@@ -35,17 +32,17 @@ return lazy.setup({
     {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
-        config = function () 
-          local configs = require("nvim-treesitter.configs")
+        config = function()
+            local configs = require("nvim-treesitter.configs")
 
-          configs.setup({
-              ensure_installed = {},
-              sync_install = false,
-              highlight = { enable = true },
-              indent = { enable = true },  
+            configs.setup({
+                ensure_installed = {},
+                sync_install = false,
+                highlight = { enable = true },
+                indent = { enable = true },
             })
         end
-     },
+    },
 
     -- Other useful plugins
     'theprimeagen/harpoon',
@@ -54,23 +51,24 @@ return lazy.setup({
     'tpope/vim-vinegar',
 
     {
-      "neovim/nvim-lspconfig",
-
-      dependencies = {
-        "williamboman/mason.nvim",
-        "williamboman/mason-lspconfig.nvim",
         "neovim/nvim-lspconfig",
-        'hrsh7th/nvim-cmp',
-        'hrsh7th/cmp-nvim-lsp',
-        'L3MON4D3/LuaSnip'
-      },
 
-      config = function()
-        local lspconfig = require("lspconfig")
-        local mason = require("mason")
+        dependencies = {
+            "williamboman/mason.nvim",
+            "VonHeikemen/lsp-zero.nvim",
+            "williamboman/mason-lspconfig.nvim",
+            "neovim/nvim-lspconfig",
+            'hrsh7th/nvim-cmp',
+            'hrsh7th/cmp-nvim-lsp',
+            'L3MON4D3/LuaSnip'
+        },
 
-        mason.setup()
-      end,
+        config = function()
+            local lspconfig = require("lspconfig")
+            local mason = require("mason")
+
+            mason.setup()
+        end,
     },
     -- Auto pairs
     {
@@ -79,6 +77,29 @@ return lazy.setup({
             require("nvim-autopairs").setup {}
         end
     },
+    {
+        'stevearc/conform.nvim',
+        opts = {},
+    },
+    {
+        "jbyuki/instant.nvim",
+        config = function()
+            vim.g.instant_username = "juliuswaldmann"
+        end
+    },
+    {
+        "folke/which-key.nvim",
+        event = "VeryLazy",
+        init = function()
+            vim.o.timeout = true
+            vim.o.timeoutlen = 300
+        end,
+        opts = {
+            -- your configuration comes here
+            -- or leave it empty to use the default settings
+            -- refer to the configuration section below
+        }
+    }
 
     -- Uncomment these lines if you want to use the plugins
     -- use 'nvim-tree/nvim-tree.lua'
