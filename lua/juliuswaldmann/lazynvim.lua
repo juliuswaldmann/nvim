@@ -104,7 +104,6 @@ return lazy.setup({
           },
        }
     },
-
     -- Uncomment these lines if you want to use the plugins
     -- use 'nvim-tree/nvim-tree.lua'
     -- use 'nvim-tree/nvim-web-devicons'
