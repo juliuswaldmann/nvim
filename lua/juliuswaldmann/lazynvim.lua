@@ -91,6 +91,19 @@ return lazy.setup({
         'nvim-lualine/lualine.nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons' }
     },
+    {
+      "gbprod/cutlass.nvim",
+      opts = {
+          cut_key = m,
+          override_del = nil,
+          exclude = {},
+          registers = {
+            select = "_",
+            delete = "_",
+            change = "_",
+          },
+       }
+    },
 
     -- Uncomment these lines if you want to use the plugins
     -- use 'nvim-tree/nvim-tree.lua'
