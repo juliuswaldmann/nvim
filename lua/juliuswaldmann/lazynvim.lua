@@ -94,7 +94,7 @@ return lazy.setup({
     {
       "gbprod/cutlass.nvim",
       opts = {
-          cut_key = m,
+          cut_key = "m",
           override_del = nil,
           exclude = {},
           registers = {
@@ -104,6 +104,28 @@ return lazy.setup({
           },
        }
     },
+    {
+        "gennaro-tedesco/nvim-possession",
+        dependencies = {
+            "ibhagwan/fzf-lua",
+        },
+        config = true,
+        init = function()
+            local possession = require("nvim-possession")
+            vim.keymap.set("n", "<leader>sl", function()
+                possession.list()
+            end)
+            vim.keymap.set("n", "<leader>sn", function()
+                possession.new()
+            end)
+            vim.keymap.set("n", "<leader>su", function()
+                possession.update()
+            end)
+            vim.keymap.set("n", "<leader>sd", function()
+                possession.delete()
+            end)
+        end,
+    }
     -- Uncomment these lines if you want to use the plugins
     -- use 'nvim-tree/nvim-tree.lua'
     -- use 'nvim-tree/nvim-web-devicons'

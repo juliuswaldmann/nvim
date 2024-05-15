@@ -34,7 +34,6 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/.config/nvim/lua/theprimeagen/packer.lua<CR>");
-vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
 
 vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
@@ -49,10 +48,10 @@ vim.api.nvim_set_keymap(
 )
 
 --panels
-vim.keymap.set('n', '<C-j>', '<C-W><C-J>', {desc = 'Move to window below'})
-vim.keymap.set('n', '<C-k>', '<C-W><C-K>', {desc = 'Move to window above'})
-vim.keymap.set('n', '<C-l>', '<C-W><C-L>', {desc = 'Move to window to the right'})
-vim.keymap.set('n', '<C-h>', '<C-W><C-H>', {desc = 'Move to window to the left'})
+vim.keymap.set('n', '<C-j>', '<C-w>j', {desc = 'Move to window below'})
+vim.keymap.set('n', '<C-k>', '<C-w>k', {desc = 'Move to window above'})
+vim.keymap.set('n', '<C-l>', '<C-w>l', {desc = 'Move to window to the right'})
+vim.keymap.set('n', '<C-h>', '<C-w>h', {desc = 'Move to window to the left'})
 
 --terminal ESC
 vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]],{noremap=true})
