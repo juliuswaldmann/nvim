@@ -125,7 +125,13 @@ return lazy.setup({
                 possession.delete()
             end)
         end,
-    }
+    },
+    {
+        "andrewferrier/wrapping.nvim",
+        config = function()
+            require("wrapping").setup()
+        end
+    },
     -- Uncomment these lines if you want to use the plugins
     -- use 'nvim-tree/nvim-tree.lua'
     -- use 'nvim-tree/nvim-web-devicons'
