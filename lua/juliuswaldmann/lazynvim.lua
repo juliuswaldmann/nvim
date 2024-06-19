@@ -132,6 +132,13 @@ return lazy.setup({
             require("wrapping").setup()
         end
     },
+    {
+        "gelguy/wilder.nvim",
+        config = function ()
+            local wilder = require('wilder')
+            wilder.setup({modes = {':', '/', '?'}})
+        end,
+    },
     -- Uncomment these lines if you want to use the plugins
     -- use 'nvim-tree/nvim-tree.lua'
     -- use 'nvim-tree/nvim-web-devicons'
