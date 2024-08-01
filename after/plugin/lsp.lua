@@ -37,6 +37,15 @@ cmp.setup({
     {name = 'nvim_lua'},
     {name = 'luasnip', keyword_length = 2},
     {name = 'buffer', keyword_length = 3},
+    {
+        name = 'look',
+        keyword_length = 2,
+        option = {
+            convert_case = true,
+            loud = true
+            --dict = '/usr/share/dict/words'
+        }
+    },
   },
   formatting = lsp_zero.cmp_format(),
   mapping = cmp.mapping.preset.insert({
