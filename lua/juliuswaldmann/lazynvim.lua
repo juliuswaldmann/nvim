@@ -43,6 +43,7 @@ return lazy.setup({
             })
         end
     },
+    "apple/pkl-neovim",
 
     -- Other useful plugins
     'theprimeagen/harpoon',
@@ -81,7 +82,7 @@ return lazy.setup({
     {
         'stevearc/conform.nvim',
         opts = {},
-    },
+   },
     {
         "jbyuki/instant.nvim",
         config = function()
@@ -149,33 +150,33 @@ return lazy.setup({
       lazy = false,
       priority = 1001,
     },
-    {'romgrk/barbar.nvim',
-        dependencies = {
-          'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
-          'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
-        },
-        init = function() vim.g.barbar_auto_setup = false end,
-        opts = {
-          -- lazy.nvim will automatically call setup for you. put your options here, anything missing will use the default:
-          -- animation = true,
-          -- insert_at_start = true,
-          -- …etc.
-        },
-        version = '^1.0.0', -- optional: only update when a new 1.x version is released
-      },
-      {
-        dir = "~/Documents/code/here.nvim",
-        name = "here",
-        config = function ()
-            require("here")
-        end
-      },
-      {
-          "iamcco/markdown-preview.nvim",
-          cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-          ft = { "markdown" },
-          build = function() vim.fn["mkdp#util#install"]() end,
-      }
+    --{'romgrk/barbar.nvim',
+    --  dependencies = {
+    --    'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
+    --    'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
+    --  },
+    --  init = function() vim.g.barbar_auto_setup = false end,
+    --  opts = {
+    --    -- lazy.nvim will automatically call setup for you. put your options here, anything missing will use the default:
+    --    -- animation = true,
+    --    -- insert_at_start = true,
+    --    -- …etc.
+    --  },
+    --  version = '^1.0.0', -- optional: only update when a new 1.x version is released
+    --},
+    {
+      dir = "~/Documents/code/here.nvim",
+      name = "here",
+      config = function ()
+          require("here")
+      end
+    },
+    {
+        "iamcco/markdown-preview.nvim",
+        cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+        ft = { "markdown" },
+        build = function() vim.fn["mkdp#util#install"]() end,
+    }
 
     -- Uncomment these lines if you want to use the plugins
     -- use 'nvim-tree/nvim-tree.lua'
