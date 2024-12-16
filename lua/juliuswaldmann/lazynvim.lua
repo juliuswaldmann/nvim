@@ -66,12 +66,12 @@ return lazy.setup({
             'L3MON4D3/LuaSnip'
         },
 
-        config = function()
-            local lspconfig = require("lspconfig")
-            local mason = require("mason")
+        -- config = function()
+        --     local lspconfig = require("lspconfig")
+        --     local mason = require("mason")
 
-            mason.setup()
-        end,
+        --     mason.setup()
+        -- end,
     },
     -- Auto pairs
     {

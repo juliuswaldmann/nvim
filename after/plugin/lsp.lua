@@ -59,3 +59,32 @@ cmp.setup({
 lsp_zero.setup()
 
 vim.filetype.add({ extension = { templ = "templ" } })
+
+require('lspconfig').pylsp.setup{
+    on_attach=on_attach,
+    filetypes = {'python'},
+    settings = {
+        configurationSources = {"flake8"},
+        formatCommand = {"black"},
+        pylsp = {
+            plugins = {
+            -- jedi_completion = {fuzzy = true},
+            -- jedi_completion = {eager=true},
+            jedi_completion = {
+                include_params = true,
+            },
+            jedi_signature_help = {enabled = true},
+            pyflakes={enabled=true},
+            -- pylint = {args = {'--ignore=E501,E231', '-'}, enabled=true, debounce=200},
+            pylsp_mypy={enabled=false},
+            pycodestyle={
+                enabled=true,
+                ignore={'E501', 'E231'},
+                maxLineLength=120},
+                yapf={enabled=true}
+            }
+        }
+    }
+}
+
+
