@@ -177,10 +177,15 @@ return lazy.setup({
         cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
         ft = { "markdown" },
         build = function() vim.fn["mkdp#util#install"]() end,
-    }
+    },
 
     -- Uncomment these lines if you want to use the plugins
     -- use 'nvim-tree/nvim-tree.lua'
     -- use 'nvim-tree/nvim-web-devicons'
-    -- use {'github/copilot.vim', branch = 'release' }
+    -- use {'github/copilot.vim', branch = 'release' }  
+
+    {
+        "jim-at-jibba/micropython.nvim",
+        dependencies = { "akinsho/toggleterm.nvim", "stevearc/dressing.nvim" },
+    },
 })
